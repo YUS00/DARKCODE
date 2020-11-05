@@ -1,0 +1,12 @@
+C:\Users\Pc\source\repos\timer\timer\bin\Debug\timer.exe.config
+C:\Users\Pc\source\repos\timer\timer\bin\Debug\timer.exe
+C:\Users\Pc\source\repos\timer\timer\bin\Debug\timer.pdb
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.csprojAssemblyReference.cache
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.Form1.resources
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.Properties.Resources.resources
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.csproj.GenerateResource.cache
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.csproj.CoreCompileInputs.cache
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.exe
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.pdb
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.SEGON.resources
+C:\Users\Pc\source\repos\timer\timer\obj\Debug\timer.KEYPAD.resources

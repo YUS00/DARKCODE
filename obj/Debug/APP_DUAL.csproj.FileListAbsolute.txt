@@ -1,0 +1,43 @@
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\APP_DUAL.csprojAssemblyReference.cache
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.SPLASH.resources
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.KEYPAD.resources
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.Properties.Resources.resources
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\APP_DUAL.csproj.GenerateResource.cache
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\APP_DUAL.csproj.CoreCompileInputs.cache
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.exe
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.pdb
+C:\Users\Pc\Desktop\CLASE\M20-master\timer\bin\timer.exe.config
+C:\Users\Pc\Desktop\CLASE\M20-master\timer\bin\timer.exe
+C:\Users\Pc\Desktop\CLASE\M20-master\timer\bin\timer.pdb
+C:\S2AM\M20\APP DUAL\APP\timer.exe.config
+C:\S2AM\M20\APP DUAL\APP\timer.exe
+C:\S2AM\M20\APP DUAL\APP\timer.pdb
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\APP_DUAL.csproj.CopyComplete
+C:\S2AM\M20\APP DUAL\APP\CircularProgressBar.dll
+C:\S2AM\M20\APP DUAL\APP\WinFormAnimation.dll
+C:\S2AM\M20\APP DUAL\APP\CircularProgressBar.xml
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.Menu.resources
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.Login.resources
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.Admin.resources
+C:\S2AM\M20\APP DUAL\APP\obj\Debug\timer.Dades.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\APP_DUAL.csprojAssemblyReference.cache
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Admin.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Menu.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Splash.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Keypad.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Properties.Resources.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Login.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\APP_DUAL.csproj.GenerateResource.cache
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\APP_DUAL.csproj.CoreCompileInputs.cache
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\APP_DUAL.csproj.CopyComplete
+C:\S2AM\M20\APP DUAL\APP\DUAL\timer.exe.config
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.exe
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.pdb
+C:\S2AM\M20\APP DUAL\APP\DUAL\timer.exe
+C:\S2AM\M20\APP DUAL\APP\DUAL\timer.pdb
+C:\S2AM\M20\APP DUAL\APP\DUAL\CircularProgressBar.dll
+C:\S2AM\M20\APP DUAL\APP\DUAL\WinFormAnimation.dll
+C:\S2AM\M20\APP DUAL\APP\DUAL\CircularProgressBar.xml
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Dades_equip.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Dades_usuari.resources
+C:\S2AM\M20\APP DUAL\APP\DUAL\obj\Debug\timer.Coordenadas.resources
