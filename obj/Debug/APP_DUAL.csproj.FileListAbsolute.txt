@@ -62,3 +62,23 @@ C:\S2AM\M20\APP DUAL\APP\DARKCODE\timer.pdb
 C:\S2AM\M20\APP DUAL\APP\DARKCODE\CircularProgressBar.dll
 C:\S2AM\M20\APP DUAL\APP\DARKCODE\WinFormAnimation.dll
 C:\S2AM\M20\APP DUAL\APP\DARKCODE\CircularProgressBar.xml
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Admin.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Coordenadas.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Dades_equip.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Dades_usuari.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Menu.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Splash.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Keypad.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Properties.Resources.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.Login.resources
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\APP_DUAL.csproj.GenerateResource.cache
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\APP_DUAL.csproj.CoreCompileInputs.cache
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\APP_DUAL.csproj.CopyComplete
+C:\Users\CR\Documents\GitHub\DARKCODE\timer.exe.config
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.exe
+C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\timer.pdb
+C:\Users\CR\Documents\GitHub\DARKCODE\timer.exe
+C:\Users\CR\Documents\GitHub\DARKCODE\timer.pdb
+C:\Users\CR\Documents\GitHub\DARKCODE\CircularProgressBar.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\WinFormAnimation.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\CircularProgressBar.xml

@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace timer
 {
@@ -55,7 +56,26 @@ namespace timer
 
         private void register_bttn_Click(object sender, EventArgs e)
         {
-
+            Valor_APPConfig();
         }
+
+        public void Valor_APPConfig()
+        {
+            void AddValue(string key, string value)
+            {
+                key = "TrustedUser";
+                value = "Prueba";
+
+                // Add an Application Setting.
+                System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); 
+
+                config.AppSettings.Settings.Add(key, value);
+
+                // Save the changes in App.config file.
+
+                config.Save(ConfigurationSaveMode.Full);
+            }
+        }
+
     }
 }
