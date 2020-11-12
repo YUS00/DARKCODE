@@ -56,26 +56,18 @@ namespace timer
 
         private void register_bttn_Click(object sender, EventArgs e)
         {
-            Valor_APPConfig();
-        }
-
-        public void Valor_APPConfig()
-        {
-            void AddValue(string key, string value)
-            {
-                key = "TrustedUser";
-                value = "Prueba";
+                string cb_username = ComboBox_UserName.Text;
+                string key = "TrustedUser";
+                string value = cb_username;
 
                 // Add an Application Setting.
-                System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); 
+                System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
                 config.AppSettings.Settings.Add(key, value);
 
                 // Save the changes in App.config file.
 
-                config.Save(ConfigurationSaveMode.Full);
-            }
+                config.Save(ConfigurationSaveMode.Modified);
         }
-
     }
 }

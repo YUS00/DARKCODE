@@ -82,3 +82,9 @@ C:\Users\CR\Documents\GitHub\DARKCODE\timer.pdb
 C:\Users\CR\Documents\GitHub\DARKCODE\CircularProgressBar.dll
 C:\Users\CR\Documents\GitHub\DARKCODE\WinFormAnimation.dll
 C:\Users\CR\Documents\GitHub\DARKCODE\CircularProgressBar.xml
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\timer.exe.config
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\timer.exe
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\timer.pdb
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\CircularProgressBar.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\WinFormAnimation.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\CircularProgressBar.xml
