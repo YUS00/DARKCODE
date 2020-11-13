@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
-using System.Configuration;
 
 namespace timer
 {
@@ -56,18 +56,30 @@ namespace timer
 
         private void register_bttn_Click(object sender, EventArgs e)
         {
-                string cb_username = ComboBox_UserName.Text;
-                string key = "TrustedUser";
-                string value = cb_username;
+            string cb_username = ComboBox_UserName.Text;
+            string key = "TrustedUser";
+            string value = cb_username;
 
-                // Add an Application Setting.
-                System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            // Add an Application Setting.
+            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-                config.AppSettings.Settings.Add(key, value);
+            var settings = config.AppSettings.Settings;
 
-                // Save the changes in App.config file.
+            if (settings[key] == null)
+            {
+                settings.Add(key, value);
+            }
+            else
+            {
+                settings[key].Value = value;
+            }
 
-                config.Save(ConfigurationSaveMode.Modified);
+            //config.AppSettings.Settings.Add(key, value);
+
+
+            // Save the changes in App.config file.
+
+            config.Save(ConfigurationSaveMode.Modified);
         }
     }
 }
