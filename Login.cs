@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -16,8 +17,16 @@ namespace timer
         {
             string username = textBox1.Text;
             string password = textBox3.Text;
+            string query = "Select * from users" + "where codeuser = '" + username + "' AND password = '" + password + "'";
 
-            if ((this.textBox1.Text == "Admin") && (this.textBox3.Text == "admin"))
+            BaseDatos.DataBase BD = new BaseDatos.DataBase();
+
+            DataSet dades = BD.PortarPerConsulta(query);
+            int registres = dades.Tables[0].Rows.Count;
+
+
+            //if ((this.textBox1.Text == "Admin") && (this.textBox3.Text == "admin"))
+            if (registres >0)
             {
                 attempt = 0;
                 Menu fm2 = new Menu();
