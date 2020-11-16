@@ -33,5 +33,16 @@ namespace timer.Properties {
                 return ((string)(this["SecureCoreConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0JDU7DN\\SQLEXPRESS;Initial Catalog=DarkCore;Integrated Securi" +
+            "ty=True")]
+        public string DarkCoreConnectionString {
+            get {
+                return ((string)(this["DarkCoreConnectionString"]));
+            }
+        }
     }
 }

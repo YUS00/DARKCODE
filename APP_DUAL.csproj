@@ -98,6 +98,21 @@
     <Compile Include="Dades_usuari.Designer.cs">
       <DependentUpon>Dades_usuari.cs</DependentUpon>
     </Compile>
+    <Compile Include="DarkCoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DarkCoreDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DarkCoreDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarkCoreDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Integer.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -163,6 +178,39 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DarkCoreDataSet.xsc">
+      <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DarkCoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DarkCoreDataSet.xss">
+      <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet1.xsc">
+      <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DarkCoreDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DarkCoreDataSet1.xss">
+      <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet2.xsc">
+      <DependentUpon>DarkCoreDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DarkCoreDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DarkCoreDataSet2.xss">
+      <DependentUpon>DarkCoreDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
