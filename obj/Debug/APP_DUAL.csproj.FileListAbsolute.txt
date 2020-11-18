@@ -89,5 +89,5 @@ C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\CircularProgressBar.dll
 C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\WinFormAnimation.dll
 C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\CircularProgressBar.xml
 C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\APP_DUAL.csprojAssemblyReference.cache
-C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\BaseDatos.dll
-C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\BaseDatos.pdb
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\BaseDatosDUAL.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\BaseDatosDUAL.pdb

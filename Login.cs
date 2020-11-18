@@ -15,16 +15,37 @@ namespace timer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text;
-            string password = textBox3.Text;
-            string query = "Select * from Users" + "where codeUser = '" + username + "' AND password = '" + password + "'";
+            
+            string username;
+            string password;
+            string query;
+            string device = "";
+            string hostname;
 
-            BaseDatos.DataBase BD = new BaseDatos.DataBase();
+            //User
+
+            username = textBox1.Text;
+            password = textBox3.Text;
+            query = "select * from Users where codeuser = '" + username + "' AND password = '" + password + "'";
+
+            BaseDatosDUAL.DataBase BD = new BaseDatosDUAL.DataBase();
 
             DataSet dades = BD.PortarPerConsulta(query);
+
+
+            //Dispositivo y User
+
+            Dades_usuari User_Data = new Dades_usuari();
+            hostname = User_Data.GetHostName(device);
+            query = "select * from MessiUsers where idDevice = '" + hostname + "' AND idUser = '" + username + "'";
+
+            //Registros 
+
             int registres = dades.Tables[0].Rows.Count;
 
+
             //if ((this.textBox1.Text == "Admin") && (this.textBox3.Text == "admin"))
+
             if (registres > 0)
             {
                 attempt = 0;

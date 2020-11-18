@@ -15,7 +15,8 @@ namespace timer
             macAdd = GetMacAddress();
             textBox1.Text = macAdd;
             string hostName;
-            hostName = GetHostName();
+            string device = "";
+            hostName = GetHostName(device);
             textBox2.Text = hostName;
         }
 
@@ -37,11 +38,11 @@ namespace timer
             }
             return macAddresses;
         }
-        private string GetHostName()
+        public string GetHostName(string device)
         {
             string HostName = Dns.GetHostName();
-            return HostName;
-
+            device = HostName;
+            return device;
         }
         private void delete_bttn_Click(object sender, EventArgs e)
         {
