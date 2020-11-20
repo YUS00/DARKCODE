@@ -35,9 +35,9 @@ namespace timer
 
             //Dispositivo y User
 
-            Dades_usuari User_Data = new Dades_usuari();
-            hostname = User_Data.GetHostName(device);
-            query = "select * from MessiUsers where idDevice = '" + hostname + "' AND idUser = '" + username + "'";
+            //Dades_usuari User_Data = new Dades_usuari();
+            //hostname = User_Data.GetHostName(device);
+            //query = "select * from MessiUsers where idDevice = '" + hostname + "' AND idUser = '" + username + "'";
 
             //Registros 
 

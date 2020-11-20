@@ -46,7 +46,7 @@
             this.save_bttn.BackColor = System.Drawing.Color.White;
             this.save_bttn.ForeColor = System.Drawing.Color.Red;
             this.save_bttn.Location = new System.Drawing.Point(621, 335);
-            this.save_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.save_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.save_bttn.Name = "save_bttn";
             this.save_bttn.Size = new System.Drawing.Size(100, 28);
             this.save_bttn.TabIndex = 14;
@@ -59,7 +59,7 @@
             this.delete_bttn.BackColor = System.Drawing.Color.White;
             this.delete_bttn.ForeColor = System.Drawing.Color.Red;
             this.delete_bttn.Location = new System.Drawing.Point(777, 335);
-            this.delete_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delete_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.delete_bttn.Name = "delete_bttn";
             this.delete_bttn.Size = new System.Drawing.Size(100, 28);
             this.delete_bttn.TabIndex = 13;
@@ -110,7 +110,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(37, 203);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(173, 29);
@@ -119,7 +119,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(37, 335);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(156, 29);
@@ -133,7 +133,7 @@
             "YOUSEF-THE-BOOS",
             "CARLOS-THE-SENIOR"});
             this.ComboBox_UserName.Location = new System.Drawing.Point(704, 203);
-            this.ComboBox_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboBox_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.ComboBox_UserName.Name = "ComboBox_UserName";
             this.ComboBox_UserName.Size = new System.Drawing.Size(160, 24);
             this.ComboBox_UserName.TabIndex = 15;
@@ -153,10 +153,11 @@
             // 
             // register_bttn
             // 
-            this.register_bttn.BackColor = System.Drawing.Color.White;
-            this.register_bttn.ForeColor = System.Drawing.Color.Red;
+            this.register_bttn.BackColor = System.Drawing.Color.DimGray;
+            this.register_bttn.Enabled = false;
+            this.register_bttn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.register_bttn.Location = new System.Drawing.Point(704, 386);
-            this.register_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.register_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.register_bttn.Name = "register_bttn";
             this.register_bttn.Size = new System.Drawing.Size(100, 28);
             this.register_bttn.TabIndex = 17;
@@ -181,7 +182,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dades_usuari";
             this.Text = "dades_usuari";
             this.ResumeLayout(false);

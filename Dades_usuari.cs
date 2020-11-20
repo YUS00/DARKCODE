@@ -3,6 +3,9 @@ using System.Configuration;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
+using System.Data;
+using System.IO;
+using System.Drawing;
 
 namespace timer
 {
@@ -15,10 +18,10 @@ namespace timer
             macAdd = GetMacAddress();
             textBox1.Text = macAdd;
             string hostName;
-            string device = "";
-            hostName = GetHostName(device);
+            hostName = GetHostName();
             textBox2.Text = hostName;
         }
+
 
         private void Dades_Load(object sender, EventArgs e)
         {
@@ -38,11 +41,10 @@ namespace timer
             }
             return macAddresses;
         }
-        public string GetHostName(string device)
+        public string GetHostName()
         {
             string HostName = Dns.GetHostName();
-            device = HostName;
-            return device;
+            return HostName;
         }
         private void delete_bttn_Click(object sender, EventArgs e)
         {
@@ -52,7 +54,26 @@ namespace timer
 
         private void check_bttn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("SE HA GUARDADO");
+            string query = "select * from TrustedDevices where Hostname = '" + GetHostName() + "' and MAC = '" + GetMacAddress() + "'";
+
+            BaseDatosDUAL.DataBase BD = new BaseDatosDUAL.DataBase();
+
+            DataSet dades = BD.PortarPerConsulta(query);
+
+            int registres = dades.Tables[0].Rows.Count;
+
+            if (registres >0)
+            {
+                MessageBox.Show("Ese dispositivo ya existe.");
+            }
+            else
+            {
+                MessageBox.Show("Ese dispositivo no se encuentra dentro de la base de datos. Haga clic en 'Register' para agregarlo.");
+                register_bttn.BackColor = Color.White;
+                register_bttn.ForeColor = Color.Red;
+                register_bttn.Enabled = true;
+            }
+
         }
 
         private void register_bttn_Click(object sender, EventArgs e)
@@ -81,6 +102,11 @@ namespace timer
             // Save the changes in App.config file.
 
             config.Save(ConfigurationSaveMode.Modified);
+
         }
+
+
+
+
     }
 }
