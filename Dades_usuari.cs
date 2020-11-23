@@ -54,25 +54,7 @@ namespace timer
 
         private void check_bttn_Click(object sender, EventArgs e)
         {
-            string query = "select * from TrustedDevices where Hostname = '" + GetHostName() + "' and MAC = '" + GetMacAddress() + "'";
 
-            BaseDatosDUAL.DataBase BD = new BaseDatosDUAL.DataBase();
-
-            DataSet dades = BD.PortarPerConsulta(query);
-
-            int registres = dades.Tables[0].Rows.Count;
-
-            if (registres >0)
-            {
-                MessageBox.Show("Ese dispositivo ya existe.");
-            }
-            else
-            {
-                MessageBox.Show("Ese dispositivo no se encuentra dentro de la base de datos. Haga clic en 'Register' para agregarlo.");
-                register_bttn.BackColor = Color.White;
-                register_bttn.ForeColor = Color.Red;
-                register_bttn.Enabled = true;
-            }
 
         }
 

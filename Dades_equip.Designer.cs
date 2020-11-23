@@ -36,24 +36,32 @@
             this.label3 = new System.Windows.Forms.Label();
             this.delete_bttn = new System.Windows.Forms.Button();
             this.save_bttn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(480, 149);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(676, 183);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 24);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(156, 29);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(47, 149);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(75, 183);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 24);
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(173, 29);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -61,9 +69,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(141, 34);
+            this.label1.Location = new System.Drawing.Point(188, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 31);
+            this.label1.Size = new System.Drawing.Size(522, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "WELCOME TO THE DARK SIDE";
             // 
@@ -73,9 +82,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(41, 97);
+            this.label2.Location = new System.Drawing.Point(55, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 31);
+            this.label2.Size = new System.Drawing.Size(211, 39);
             this.label2.TabIndex = 3;
             this.label2.Text = "HOSTNAME";
             // 
@@ -85,43 +95,61 @@
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(474, 103);
+            this.label3.Location = new System.Drawing.Point(638, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 31);
+            this.label3.Size = new System.Drawing.Size(269, 39);
             this.label3.TabIndex = 4;
             this.label3.Text = "MAC ADDRESS";
             // 
             // delete_bttn
             // 
-            this.delete_bttn.BackColor = System.Drawing.Color.White;
-            this.delete_bttn.ForeColor = System.Drawing.Color.Red;
-            this.delete_bttn.Location = new System.Drawing.Point(480, 221);
+            this.delete_bttn.BackColor = System.Drawing.Color.LightGray;
+            this.delete_bttn.Enabled = false;
+            this.delete_bttn.ForeColor = System.Drawing.Color.DimGray;
+            this.delete_bttn.Location = new System.Drawing.Point(318, 292);
+            this.delete_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.delete_bttn.Name = "delete_bttn";
-            this.delete_bttn.Size = new System.Drawing.Size(75, 23);
+            this.delete_bttn.Size = new System.Drawing.Size(100, 28);
             this.delete_bttn.TabIndex = 6;
-            this.delete_bttn.Text = "CLEAR";
+            this.delete_bttn.Text = "DELETE";
             this.delete_bttn.UseVisualStyleBackColor = false;
             this.delete_bttn.Click += new System.EventHandler(this.delete_Click);
             // 
             // save_bttn
             // 
-            this.save_bttn.BackColor = System.Drawing.Color.White;
-            this.save_bttn.ForeColor = System.Drawing.Color.Red;
-            this.save_bttn.Location = new System.Drawing.Point(47, 221);
+            this.save_bttn.BackColor = System.Drawing.Color.LightGray;
+            this.save_bttn.Enabled = false;
+            this.save_bttn.ForeColor = System.Drawing.Color.DimGray;
+            this.save_bttn.Location = new System.Drawing.Point(195, 292);
+            this.save_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.save_bttn.Name = "save_bttn";
-            this.save_bttn.Size = new System.Drawing.Size(75, 23);
+            this.save_bttn.Size = new System.Drawing.Size(100, 28);
             this.save_bttn.TabIndex = 7;
             this.save_bttn.Text = "SAVE";
             this.save_bttn.UseVisualStyleBackColor = false;
             this.save_bttn.Click += new System.EventHandler(this.save_bttn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(75, 292);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "CHECK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Dades_equip
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(690, 321);
+            this.ClientSize = new System.Drawing.Size(920, 395);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.delete_bttn);
             this.Controls.Add(this.label3);
@@ -129,6 +157,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dades_equip";
             this.Text = "Dades";
             this.Load += new System.EventHandler(this.Dades_Load);
@@ -146,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button delete_bttn;
         private System.Windows.Forms.Button save_bttn;
+        private System.Windows.Forms.Button button1;
     }
 }
