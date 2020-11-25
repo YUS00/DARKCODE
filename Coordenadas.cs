@@ -59,6 +59,9 @@ namespace timer
             int acumulador_letra = 0;
             int acumulador_codigo = 0;
 
+            BD = new BaseDatosDUAL.DataBase();
+            query = "Delete From AdminCoordinates;";
+            dades = BD.PortarPerConsulta(query);
 
             for (int i = 0; i < 4; i++)
             {
@@ -76,19 +79,6 @@ namespace timer
                 dc_valor = Obtener_numero();
 
 
-                query = "select count(*)from AdminCoordinates; ";
-
-                dades = BD.PortarPerConsulta(query);
-
-
-
-                //if (x > 10)
-                //{
-                //    query = "DELETE * FROM AdminCoordinates";
-                //}
-
-
-
                 while (Diccionario1.ContainsValue(dc_valor) == true)
                 {
                     dc_valor = Obtener_numero();
@@ -99,16 +89,7 @@ namespace timer
 
                 query = "INSERT INTO AdminCoordinates values('" + id_codigo[i] + "', '" + dc_valor + "'); ";
 
-                BD = new BaseDatosDUAL.DataBase();
-
                 dades = BD.PortarPerConsulta(query);
-
-
-
-
-
-
-
 
             }
 
@@ -116,6 +97,7 @@ namespace timer
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             foreach (KeyValuePair<string, string> entry in Diccionario1)
             {
                 Label label_panel = new Label();
