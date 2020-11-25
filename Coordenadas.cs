@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
 
 namespace timer
 {
@@ -11,8 +12,14 @@ namespace timer
         {
             InitializeComponent();
         }
+
         Dictionary<String, String> Diccionario1;
         String[] id_codigo = new string[20];
+
+        string query;
+        int registres;
+        DataSet dades;
+        BaseDatosDUAL.DataBase BD;
 
         public string Obtener_numero()
         {
@@ -52,6 +59,7 @@ namespace timer
             int acumulador_letra = 0;
             int acumulador_codigo = 0;
 
+
             for (int i = 0; i < 4; i++)
             {
                 for (int o = 0; o < 5; o++)
@@ -61,16 +69,47 @@ namespace timer
                 }
                 acumulador_letra++;
             }
+
             for (int i = 0; i < 20; i++)
             {
                 String dc_valor;
                 dc_valor = Obtener_numero();
+
+
+                query = "select count(*)from AdminCoordinates; ";
+
+                dades = BD.PortarPerConsulta(query);
+
+
+
+                //if (x > 10)
+                //{
+                //    query = "DELETE * FROM AdminCoordinates";
+                //}
+
+
+
                 while (Diccionario1.ContainsValue(dc_valor) == true)
                 {
                     dc_valor = Obtener_numero();
                 }
 
                 Diccionario1.Add(id_codigo[i], dc_valor);
+
+
+                query = "INSERT INTO AdminCoordinates values('" + id_codigo[i] + "', '" + dc_valor + "'); ";
+
+                BD = new BaseDatosDUAL.DataBase();
+
+                dades = BD.PortarPerConsulta(query);
+
+
+
+
+
+
+
+
             }
 
         }

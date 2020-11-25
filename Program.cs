@@ -13,7 +13,7 @@ namespace timer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dades_equip());
+            Application.Run(new Coordenadas());
         }
     }
 }
