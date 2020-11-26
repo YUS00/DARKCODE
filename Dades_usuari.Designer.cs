@@ -144,7 +144,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.label4.ForeColor = System.Drawing.Color.DarkRed;
-            this.label4.Location = new System.Drawing.Point(696, 139);
+            this.label4.Location = new System.Drawing.Point(697, 139);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 39);
@@ -181,9 +181,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dades_usuari";
             this.Text = "dades_usuari";
+            this.Load += new System.EventHandler(this.Dades_usuari_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.IO;
 using System.Drawing;
+using System.Data;
 
 namespace timer
 {
@@ -22,11 +23,51 @@ namespace timer
             textBox2.Text = hostName;
         }
 
+        string query;
+        int registres;
+        DataSet dades;
+        BaseDatosDUAL.DataBase BD;
 
-        private void Dades_Load(object sender, EventArgs e)
+        private void Dades_usuari_Load(object sender, EventArgs e)
         {
             GetMacAddress();
+            ComprobarTrustedDevice();
+
+            if (ComprobarTrustedDevice())
+            {
+                this.Show();
+
+                //query = "Select * from Users";
+
+                //BD = new BaseDatosDUAL.DataBase();
+
+                //dades = BD.PortarPerConsulta(query);
+
+                //try
+                //{
+                //    BaseDatosDUAL.DataBase Base = new BaseDatosDUAL.DataBase();
+
+                //    base.Connectar();
+
+                //    using (SqlDataReader read = cmd.ExecuteReader())
+                //    {
+                //        while (reader.Read())
+                //        {
+                //            CustID.Text = (read["Customer_ID"].ToString());
+
+                //        }
+                //    }
+                //}
+
+            }
+            else
+            {
+                MessageBox.Show("Su dispositivo no és de confianza. Esta pantalla se cerrará.");
+                this.Close();
+            }
         }
+
+
         private string GetMacAddress()
         {
             string macAddresses = string.Empty;
@@ -41,11 +82,36 @@ namespace timer
             }
             return macAddresses;
         }
+
         public string GetHostName()
         {
             string HostName = Dns.GetHostName();
             return HostName;
         }
+
+
+        public Boolean ComprobarTrustedDevice()
+        {
+            Boolean TrustedDevice = false;
+
+            query = "select * from TrustedDevices where MAC = '" + GetMacAddress() + "' AND HostName = '" + GetHostName() + "';";
+
+            BD = new BaseDatosDUAL.DataBase();
+
+            dades = BD.PortarPerConsulta(query);
+
+            registres = dades.Tables[0].Rows.Count;
+
+            if (registres > 0)
+            {
+                TrustedDevice = true; 
+            }
+
+            return TrustedDevice;
+        }
+
+
+
         private void delete_bttn_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
@@ -86,8 +152,6 @@ namespace timer
             config.Save(ConfigurationSaveMode.Modified);
 
         }
-
-
 
 
     }
