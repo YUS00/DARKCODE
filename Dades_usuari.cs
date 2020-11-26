@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
-using System.Data;
-using System.IO;
-using System.Drawing;
-using System.Data;
 
 namespace timer
 {
@@ -37,27 +34,17 @@ namespace timer
             {
                 this.Show();
 
-                //query = "Select * from Users";
+                query = "Select * from Users";
 
-                //BD = new BaseDatosDUAL.DataBase();
+                BD = new BaseDatosDUAL.DataBase();
 
-                //dades = BD.PortarPerConsulta(query);
+                dades = BD.PortarPerConsulta(query);
 
-                //try
-                //{
-                //    BaseDatosDUAL.DataBase Base = new BaseDatosDUAL.DataBase();
-
-                //    base.Connectar();
-
-                //    using (SqlDataReader read = cmd.ExecuteReader())
-                //    {
-                //        while (reader.Read())
-                //        {
-                //            CustID.Text = (read["Customer_ID"].ToString());
-
-                //        }
-                //    }
-                //}
+                foreach (DataRow dr in dades.Tables[0].Rows)
+                {
+                    ComboBox_UserName.Items.Add(dr["codeuser"]);
+                    //MessageBox.Show(dr["codeuser"] + " - " + dr[0]);
+                }
 
             }
             else
@@ -121,6 +108,13 @@ namespace timer
         private void check_bttn_Click(object sender, EventArgs e)
         {
 
+            query = "select * from MessiUsers, TrustedDevices, Users where MessiUsers.idDevice = TrustedDevices.idDevice and MessiUsers.idUser = Users.idUser; ";
+
+            BD = new BaseDatosDUAL.DataBase();
+
+            dades = BD.PortarPerConsulta(query);
+
+            //Falta hacer el if por "registre", y añadir las condiciones
 
         }
 
@@ -154,5 +148,5 @@ namespace timer
         }
 
 
-    }
+   }
 }

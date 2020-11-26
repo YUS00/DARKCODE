@@ -128,10 +128,6 @@
             // ComboBox_UserName
             // 
             this.ComboBox_UserName.FormattingEnabled = true;
-            this.ComboBox_UserName.Items.AddRange(new object[] {
-            "GUTI-THE-BEST",
-            "YOUSEF-THE-BOOS",
-            "CARLOS-THE-SENIOR"});
             this.ComboBox_UserName.Location = new System.Drawing.Point(704, 203);
             this.ComboBox_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.ComboBox_UserName.Name = "ComboBox_UserName";

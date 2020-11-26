@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Configuration;
+using System.Data;
+using System.Drawing;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
-using System.Data;
-using System.IO;
-using System.Drawing;
 
 
 namespace timer
