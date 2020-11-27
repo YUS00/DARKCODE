@@ -114,7 +114,9 @@ namespace timer
 
             dades = BD.PortarPerConsulta(query);
 
-            //Falta hacer el if por "registre", y añadir las condiciones
+            //Falta hacer el if por "register", y añadir las condiciones
+
+
 
         }
 

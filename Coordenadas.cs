@@ -87,10 +87,16 @@ namespace timer
                 Diccionario1.Add(id_codigo[i], dc_valor);
 
 
-                query = "INSERT INTO AdminCoordinates values('" + id_codigo[i] + "', '" + dc_valor + "'); ";
+                //query = "INSERT INTO AdminCoordinates values('" + id_codigo[i] + "', '" + dc_valor + "'); ";
 
+                //dades = BD.PortarPerConsulta(query);
+
+            }
+
+            foreach (KeyValuePair<string, string> entry in Diccionario1)
+            {
+                query = "INSERT INTO AdminCoordinates values('" + entry.Key + "', '" + entry.Value + "'); ";
                 dades = BD.PortarPerConsulta(query);
-
             }
 
         }
@@ -110,6 +116,7 @@ namespace timer
                 tableLayout.Controls.Add(label_panel);
             }
         }
+
     }
 }
 
