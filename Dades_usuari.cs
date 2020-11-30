@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
@@ -91,19 +92,12 @@ namespace timer
 
             if (registres > 0)
             {
-                TrustedDevice = true; 
+                TrustedDevice = true;
             }
 
             return TrustedDevice;
         }
 
-
-
-        private void delete_bttn_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            textBox2.Clear();
-        }
 
         private void check_bttn_Click(object sender, EventArgs e)
         {
@@ -114,9 +108,20 @@ namespace timer
 
             dades = BD.PortarPerConsulta(query);
 
+            registres = dades.Tables[0].Rows.Count;
+
             //Falta hacer el if por "register", y añadir las condiciones
 
-
+            if (registres > 0)
+            {
+                MessageBox.Show("Ya se encuntra vinculado con MESSI. Pulse 'Delete' para eliminar su vínculo");
+                habilitar_bttn(delete_bttn);
+            }
+            else
+            {
+                MessageBox.Show("No se encuentra vinculado en nuestro sistema. Seleccione 'Register' para autentificarse dentro de MESSI");
+                habilitar_bttn(register_bttn);
+            }
 
         }
 
@@ -142,13 +147,49 @@ namespace timer
 
             //config.AppSettings.Settings.Add(key, value);
 
-
             // Save the changes in App.config file.
 
             config.Save(ConfigurationSaveMode.Modified);
 
+
+            
+
+
+
+            query = "insert into MessiUsers values ()";
+
+            dades = BD.PortarPerConsulta(query);
+
+            registres = dades.Tables[0].Rows.Count;
+
+
+
+
+
+
         }
 
 
-   }
+        private void delete_bttn_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+        }
+
+
+        private void habilitar_bttn(Button boton)
+        {
+            boton.BackColor = Color.White;
+            boton.ForeColor = Color.Red;
+            boton.Enabled = true;
+        }
+
+        private void deshabilitar_bttn(Button boton)
+        {
+            boton.BackColor = Color.LightGray;
+            boton.ForeColor = Color.DimGray;
+            boton.Enabled = false;
+        }
+
+    }
 }

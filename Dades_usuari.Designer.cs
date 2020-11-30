@@ -56,8 +56,9 @@
             // 
             // delete_bttn
             // 
-            this.delete_bttn.BackColor = System.Drawing.Color.White;
-            this.delete_bttn.ForeColor = System.Drawing.Color.Red;
+            this.delete_bttn.BackColor = System.Drawing.Color.LightGray;
+            this.delete_bttn.Enabled = false;
+            this.delete_bttn.ForeColor = System.Drawing.Color.DimGray;
             this.delete_bttn.Location = new System.Drawing.Point(777, 335);
             this.delete_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.delete_bttn.Name = "delete_bttn";
@@ -149,8 +150,9 @@
             // 
             // register_bttn
             // 
-            this.register_bttn.BackColor = System.Drawing.Color.White;
-            this.register_bttn.ForeColor = System.Drawing.Color.Red;
+            this.register_bttn.BackColor = System.Drawing.Color.LightGray;
+            this.register_bttn.Enabled = false;
+            this.register_bttn.ForeColor = System.Drawing.Color.DimGray;
             this.register_bttn.Location = new System.Drawing.Point(704, 386);
             this.register_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.register_bttn.Name = "register_bttn";
