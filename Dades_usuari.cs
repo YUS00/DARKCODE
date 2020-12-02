@@ -24,7 +24,10 @@ namespace timer
         string query;
         int registres;
         DataSet dades;
-        BaseDatosDUAL.DataBase BD;
+        BaseDatosDUAL.DataBase BD = new BaseDatosDUAL.DataBase();
+        string cb_username;
+
+
 
         private void Dades_usuari_Load(object sender, EventArgs e)
         {
@@ -37,7 +40,7 @@ namespace timer
 
                 query = "Select * from Users";
 
-                BD = new BaseDatosDUAL.DataBase();
+                //BD = new BaseDatosDUAL.DataBase();
 
                 dades = BD.PortarPerConsulta(query);
 
@@ -84,7 +87,7 @@ namespace timer
 
             query = "select * from TrustedDevices where MAC = '" + GetMacAddress() + "' AND HostName = '" + GetHostName() + "';";
 
-            BD = new BaseDatosDUAL.DataBase();
+            //BD = new BaseDatosDUAL.DataBase();
 
             dades = BD.PortarPerConsulta(query);
 
@@ -101,16 +104,17 @@ namespace timer
 
         private void check_bttn_Click(object sender, EventArgs e)
         {
+            cb_username = ComboBox_UserName.Text;
 
-            query = "select * from MessiUsers, TrustedDevices, Users where MessiUsers.idDevice = TrustedDevices.idDevice and MessiUsers.idUser = Users.idUser; ";
+            query = "select * from MessiUsers where idDevice = (select idDevice from TrustedDevices where HostName = '" + GetHostName() + "') and idUser = (select idUser from Users where codeUser = '" + cb_username + "');";
 
-            BD = new BaseDatosDUAL.DataBase();
+            //BD = new BaseDatosDUAL.DataBase();
 
             dades = BD.PortarPerConsulta(query);
 
             registres = dades.Tables[0].Rows.Count;
 
-            //Falta hacer el if por "register", y añadir las condiciones
+
 
             if (registres > 0)
             {
@@ -125,10 +129,11 @@ namespace timer
 
         }
 
+
         private void register_bttn_Click(object sender, EventArgs e)
         {
-            string cb_username = ComboBox_UserName.Text;
             string key = "TrustedUser";
+            cb_username = ComboBox_UserName.Text;
             string value = cb_username;
 
             // Add an Application Setting.
@@ -152,29 +157,38 @@ namespace timer
             config.Save(ConfigurationSaveMode.Modified);
 
 
-            
+
+            query = "insert into MessiUsers select idDevice, idUser from TrustedDevices, Users where Users.codeUser = '" + cb_username + "' and TrustedDevices.HostName = '" + GetHostName() + "';";
+
+            dades = BD.PortarPerConsulta(query);
+
+
+            MessageBox.Show("Se acaba de vincular en MESSI.");
+            deshabilitar_bttn(register_bttn);
+
+            //MessageBox.Show("ERROR: Se ha producido un error a la hora de registrarse en Messi. Porfavor, revise bien su información.");
+
+        }
 
 
 
-            query = "insert into MessiUsers values ()";
+
+        private void delete_bttn_Click(object sender, EventArgs e)
+        {
+            query = "delete from MessiUsers select TrustedDevices.idDevice, Users.idUser from TrustedDevices, Users, MessiUsers where(Users.codeUser = '" + cb_username + "' and TrustedDevices.HostName = '" + GetHostName() + "') and(MessiUsers.idDevice = Users.idUser and MessiUsers.idDevice = TrustedDevices.HostName);";
 
             dades = BD.PortarPerConsulta(query);
 
             registres = dades.Tables[0].Rows.Count;
 
+            MessageBox.Show("Se acaba de desvincular de MESSI.");
+            deshabilitar_bttn(delete_bttn);
 
-
-
-
+            //MessageBox.Show("ERROR: Se ha producido un error a la hora de borrar su registro en Messi. Porfavor, revise bien su información.");
 
         }
 
 
-        private void delete_bttn_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            textBox2.Clear();
-        }
 
 
         private void habilitar_bttn(Button boton)
@@ -190,6 +204,5 @@ namespace timer
             boton.ForeColor = Color.DimGray;
             boton.Enabled = false;
         }
-
     }
 }

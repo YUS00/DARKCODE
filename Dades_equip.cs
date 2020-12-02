@@ -86,7 +86,7 @@ namespace timer
             //textBox1.Clear();
             //textBox2.Clear();
 
-            query = "DELETE FROM TrustedDevices where MAC = ('" + GetMacAddress() + "') AND HostName = ('" + GetHostName() + "'); ";
+            query = "DELETE FROM TrustedDevices where MAC = ('" + GetMacAddress() + "') AND HostName = ('" + GetHostName() + "');";
 
             BD = new BaseDatosDUAL.DataBase();
 

@@ -17,17 +17,23 @@ namespace timer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("BOTON3");
+            Dades_usuari fm3 = new Dades_usuari();
+            fm3.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("BOTON2");
+            Coordenadas fm2 = new Coordenadas();
+            fm2.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("BOTON1");
+            Dades_equip fm1 = new Dades_equip();
+            fm1.Show();
+            this.Hide();
         }
 
         private void Menu_Load(object sender, EventArgs e)

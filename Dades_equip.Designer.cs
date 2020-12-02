@@ -41,9 +41,11 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(676, 183);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(675, 183);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -53,9 +55,11 @@
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.LightGray;
+            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(75, 183);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -108,7 +112,7 @@
             this.delete_bttn.Enabled = false;
             this.delete_bttn.ForeColor = System.Drawing.Color.DimGray;
             this.delete_bttn.Location = new System.Drawing.Point(318, 292);
-            this.delete_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delete_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.delete_bttn.Name = "delete_bttn";
             this.delete_bttn.Size = new System.Drawing.Size(100, 28);
             this.delete_bttn.TabIndex = 6;
@@ -122,7 +126,7 @@
             this.save_bttn.Enabled = false;
             this.save_bttn.ForeColor = System.Drawing.Color.DimGray;
             this.save_bttn.Location = new System.Drawing.Point(195, 292);
-            this.save_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.save_bttn.Margin = new System.Windows.Forms.Padding(4);
             this.save_bttn.Name = "save_bttn";
             this.save_bttn.Size = new System.Drawing.Size(100, 28);
             this.save_bttn.TabIndex = 7;
@@ -157,7 +161,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dades_equip";
             this.Text = "Dades";
             this.Load += new System.EventHandler(this.Dades_Load);
