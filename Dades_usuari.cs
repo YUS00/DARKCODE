@@ -5,6 +5,9 @@ using System.Drawing;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Threading.Tasks;
+using System.Net.Configuration;
 
 namespace timer
 {
@@ -163,6 +166,23 @@ namespace timer
             dades = BD.PortarPerConsulta(query);
 
 
+
+
+
+            //Correo
+
+            EmailSender();
+
+
+
+
+            //
+
+
+
+
+
+
             MessageBox.Show("Se acaba de vincular en MESSI.");
             deshabilitar_bttn(register_bttn);
 
@@ -187,6 +207,37 @@ namespace timer
             //MessageBox.Show("ERROR: Se ha producido un error a la hora de borrar su registro en Messi. Porfavor, revise bien su información.");
 
         }
+
+
+
+
+
+
+        //Correo
+        //https://aspnetcoremaster.com/.net/smtp/smptclient/2019/03/11/enviar-un-correo-con-csharp-gmail-winforms.html
+
+        private void EmailSender()
+        {
+            SmtpSection smpt = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
+            SmtpClient smtpclient = new SmtpClient();
+            string origen_correo = smpt.From;
+            string destinatario_correo = "";
+            EnviarEmail(origen_correo, smtpclient, destinatario_correo);
+        }
+
+        private Task EnviarEmail(string origen_correo, SmtpClient smtpclient, string destinatario_correo)
+        {
+            string subjectEmail = "M.E.S.S.I DARK CORE - Registro al sistema";
+            string bodyEmail = "Bienvenido a Dark Core! Te agradecemos que hayas decidido apoyar al lado oscuro. Tu usuario '" + cb_username + "' se ha registrado correctamente en nuestro sistema.";
+
+            var correo = new MailMessage(from: origen_correo, to: destinatario_correo, subject: subjectEmail, body: bodyEmail);
+            correo.IsBodyHtml = true;
+
+            return smtpclient.SendMailAsync(correo);
+        }
+
+        //
+
 
 
 
