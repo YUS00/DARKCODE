@@ -169,9 +169,10 @@ namespace timer
 
 
 
+
             //Correo
 
-            EmailSender();
+            EnviarCorreo();
 
 
 
@@ -215,30 +216,68 @@ namespace timer
 
         //Correo
         //https://aspnetcoremaster.com/.net/smtp/smptclient/2019/03/11/enviar-un-correo-con-csharp-gmail-winforms.html
+        //https://stackoverflow.com/questions/32260/sending-email-in-net-through-gmail
 
-        private void EmailSender()
+        private void EnviarCorreo()
         {
-            SmtpSection smpt = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
-            SmtpClient smtpclient = new SmtpClient();
-            string origen_correo = smpt.From;
-            string destinatario_correo = "";
-            EnviarEmail(origen_correo, smtpclient, destinatario_correo);
+            query = "select descUser from Users where codeUser = '" + cb_username + "';";
+            dades = BD.PortarPerConsulta(query);
+            
+            //Falta seleccionar el campo "desc" del usuario en la BBDD para pasarlo a una variable
+
+            var fromAddress = new MailAddress("messi.system.dc@gmail.com", "MESSI_DarkCore");
+            var toAddress = new MailAddress("to@example.com", "To Name");
+            const string fromPassword = "fromPassword";
+            const string subject = "Subject";
+            const string body = "Body";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
+
         }
 
-        private Task EnviarEmail(string origen_correo, SmtpClient smtpclient, string destinatario_correo)
-        {
-            string subjectEmail = "M.E.S.S.I DARK CORE - Registro al sistema";
-            string bodyEmail = "Bienvenido a Dark Core! Te agradecemos que hayas decidido apoyar al lado oscuro. Tu usuario '" + cb_username + "' se ha registrado correctamente en nuestro sistema.";
 
-            var correo = new MailMessage(from: origen_correo, to: destinatario_correo, subject: subjectEmail, body: bodyEmail);
-            correo.IsBodyHtml = true;
 
-            return smtpclient.SendMailAsync(correo);
-        }
+
+
+
+
+        //private void EmailSender()
+        //{
+        //    SmtpSection smpt = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
+        //    SmtpClient smtpclient = new SmtpClient();
+        //    string origen_correo = smpt.From;
+        //    string destinatario_correo = "";
+        //    EnviarEmail(origen_correo, smtpclient, destinatario_correo);
+        //}
+
+        //private Task EnviarEmail(string origen_correo, SmtpClient smtpclient, string destinatario_correo)
+        //{
+        //    string subjectEmail = "M.E.S.S.I DARK CORE - Registro al sistema";
+        //    string bodyEmail = "Bienvenido a Dark Core! Te agradecemos que hayas decidido apoyar al lado oscuro. Tu usuario '" + cb_username + "' se ha registrado correctamente en nuestro sistema.";
+
+        //    var correo = new MailMessage(from: origen_correo, to: destinatario_correo, subject: subjectEmail, body: bodyEmail);
+        //    correo.IsBodyHtml = true;
+
+        //    return smtpclient.SendMailAsync(correo);
+        //}
 
         //
-
-
 
 
 
