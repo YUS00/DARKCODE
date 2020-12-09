@@ -220,16 +220,24 @@ namespace timer
 
         private void EnviarCorreo()
         {
-            query = "select descUser from Users where codeUser = '" + cb_username + "';";
+
+            query = "select * from Users where codeUser = '" + cb_username + "';";
             dades = BD.PortarPerConsulta(query);
-            
-            //Falta seleccionar el campo "desc" del usuario en la BBDD para pasarlo a una variable
+
+            string cuenta_correo = dades.Tables[0].Rows[0]["descUser"].ToString();
+
+            //Para comprobar de que la variable recibe el correo correctamente:
+                //MessageBox.Show(cuenta_correo);
+
+
+            string contraseña_correo = dades.Tables[0].Rows[0]["password"].ToString();
+
 
             var fromAddress = new MailAddress("messi.system.dc@gmail.com", "MESSI_DarkCore");
-            var toAddress = new MailAddress("to@example.com", "To Name");
-            const string fromPassword = "fromPassword";
-            const string subject = "Subject";
-            const string body = "Body";
+            var toAddress = new MailAddress("messi.system.dc@gmail.com", "messi.system.dc@gmail.com");
+            string fromPassword = contraseña_correo;
+            const string subject = "M.E.S.S.I System";
+            const string body = "Esto es un correo de prueba.";
 
             var smtp = new SmtpClient
             {
@@ -250,9 +258,6 @@ namespace timer
             }
 
         }
-
-
-
 
 
 
@@ -278,7 +283,6 @@ namespace timer
         //}
 
         //
-
 
 
         private void habilitar_bttn(Button boton)

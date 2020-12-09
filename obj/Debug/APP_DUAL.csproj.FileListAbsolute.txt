@@ -91,3 +91,6 @@ C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\CircularProgressBar.xml
 C:\Users\CR\Documents\GitHub\DARKCODE\obj\Debug\APP_DUAL.csprojAssemblyReference.cache
 C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\BaseDatosDUAL.dll
 C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\BaseDatosDUAL.pdb
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\System.Threading.AccessControl.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\CR\Documents\GitHub\DARKCODE\bin\Debug\System.Threading.Tasks.Extensions.dll
