@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dades_usuari));
             this.save_bttn = new System.Windows.Forms.Button();
             this.delete_bttn = new System.Windows.Forms.Button();
@@ -39,6 +40,10 @@
             this.ComboBox_UserName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.register_bttn = new System.Windows.Forms.Button();
+            this.darkCoreDataSet = new timer.DarkCoreDataSet();
+            this.darkCoreDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.darkCoreDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darkCoreDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // save_bttn
@@ -132,6 +137,7 @@
             // 
             // ComboBox_UserName
             // 
+            this.ComboBox_UserName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_UserName.FormattingEnabled = true;
             this.ComboBox_UserName.Location = new System.Drawing.Point(697, 203);
             this.ComboBox_UserName.Margin = new System.Windows.Forms.Padding(4);
@@ -166,6 +172,16 @@
             this.register_bttn.UseVisualStyleBackColor = false;
             this.register_bttn.Click += new System.EventHandler(this.register_bttn_Click);
             // 
+            // darkCoreDataSet
+            // 
+            this.darkCoreDataSet.DataSetName = "DarkCoreDataSet";
+            this.darkCoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // darkCoreDataSetBindingSource
+            // 
+            this.darkCoreDataSetBindingSource.DataSource = this.darkCoreDataSet;
+            this.darkCoreDataSetBindingSource.Position = 0;
+            // 
             // Dades_usuari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,6 +204,8 @@
             this.Name = "Dades_usuari";
             this.Text = "dades_usuari";
             this.Load += new System.EventHandler(this.Dades_usuari_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.darkCoreDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darkCoreDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +223,7 @@
         private System.Windows.Forms.ComboBox ComboBox_UserName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button register_bttn;
+        private DarkCoreDataSet darkCoreDataSet;
+        private System.Windows.Forms.BindingSource darkCoreDataSetBindingSource;
     }
 }
