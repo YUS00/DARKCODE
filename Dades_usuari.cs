@@ -3,11 +3,9 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Net;
+using System.Net.Mail;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
-using System.Net.Mail;
-using System.Threading.Tasks;
-using System.Net.Configuration;
 
 namespace timer
 {
@@ -217,7 +215,7 @@ namespace timer
             mail.From = new MailAddress(email);
             mail.To.Add(cuenta_correo);
             mail.Subject = "M.E.S.S.I System - Welcome!";
-            mail.Body = "Welcome to the Dark Side "+ cb_username + "! You're now a member of the M.E.S.S.I system, and your user is officially registered to our database.";
+            mail.Body = "Welcome to the Dark Side " + cb_username + "! You're now a member of the M.E.S.S.I system, and your user is officially registered to our database.";
 
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential(email, password);

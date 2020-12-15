@@ -19,34 +19,50 @@ namespace timer
             string username;
             string password;
             string query;
-            string device = "";
-            string hostname;
+            Boolean verificacio;
 
-            //User
+            //Verificacion del usuario y contraseña de "Users"
+
+            BaseDatosDUAL.DataBase BD = new BaseDatosDUAL.DataBase();
 
             username = textBox1.Text;
             password = textBox3.Text;
             query = "select * from Users where codeuser = '" + username + "' AND password = '" + password + "'";
 
-            BaseDatosDUAL.DataBase BD = new BaseDatosDUAL.DataBase();
-
             DataSet dades = BD.PortarPerConsulta(query);
 
+            verificacio = Verificar_BD(dades);
 
-            //Dispositivo y User
+            if (!verificacio)
+            {
+                MessageBox.Show("Error de inicio de sesión: Su usuario no se encuentra en la base de datos. Comprueve sus datos.");
+                attempt++;
 
-            //Dades_usuari User_Data = new Dades_usuari();
-            //hostname = User_Data.GetHostName(device);
-            //query = "select * from MessiUsers where idDevice = '" + hostname + "' AND idUser = '" + username + "'";
+            }
 
-            //Registros 
+            //Verificacion del usuario y dispositivo de "MessiUsers"
 
-            int registres = dades.Tables[0].Rows.Count;
+            else
+            {
+                Dades_usuari UserData = new Dades_usuari();
+
+                query = "select * from MessiUsers where idDevice = (select idDevice from TrustedDevices where HostName = '" + UserData.GetHostName() + "') and idUser = (select idUser from Users where codeUser = '" + username + "');";
+
+                dades = BD.PortarPerConsulta(query);
+
+                verificacio = Verificar_BD(dades);
+
+                if (!verificacio)
+                {
+                    MessageBox.Show("Error de inicio de sesión: Su usuario no se encuentra registrado en M.E.S.S.I Users.");
+                    attempt++;
+                }
+            }
 
 
-            //if ((this.textBox1.Text == "Admin") && (this.textBox3.Text == "admin"))
+            //Verificación final 
 
-            if (registres > 0)
+            if (verificacio)
             {
                 attempt = 0;
                 Menu fm2 = new Menu();
@@ -54,15 +70,36 @@ namespace timer
                 this.Hide();
             }
 
-            else if (attempt++ == 2)
+
+            else if (attempt >= 3)
             {
                 textBox3.Clear();
-                MessageBox.Show("Falló en 3 intentos de inicio de sesión. Acceso no autorizado");
-                StreamWriter A = new StreamWriter(@"bin\Debug\log.txt");
-                A.WriteLine(DateTime.Now.ToString("yyyyMMdd:HHmmss") + textBox1.Text);
+                MessageBox.Show("Error de inicio de sesión: Falló en " + attempt + " intentos de inicio de sesión. El programa se cerrará.");
+                using (StreamWriter A = new StreamWriter(@"log.txt"))
+                {
+                    A.WriteLine(DateTime.Now.ToString("yyyyMMdd:HHmmss") + username);
+                }
                 Application.Exit();
             }
         }
+
+
+
+        private Boolean Verificar_BD(DataSet ds)
+        {
+            int registro = ds.Tables[0].Rows.Count;
+
+            Boolean Sentencia = false;
+
+            if (registro > 0)
+            {
+                Sentencia = true;
+            }
+
+            return Sentencia;
+        }
+
+
 
         private void SEGON_Load(object sender, EventArgs e)
         {
